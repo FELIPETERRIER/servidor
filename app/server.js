@@ -1,22 +1,12 @@
 const express = require('express');
 const app = express();
 const port = 3001;
+const alunosController = require("./controllers/alunosController.js")
 
 app.use(express.urlencoded({ extended: true }))
 
+app.get('/aluno/:id', alunosController.getAluno)
 
-app.post('/', (recebi, respondi) => {
-    console.log(recebi.body);
-    respondi.json(recebi.body);
-}).listen(port);
+app.post('/aluno/', alunosController.postAluno)
 
- /*const http = require('http');
-
- http.createServer((request,response) => {
-     response.writeHead(200,{
-         'Content-Type':'text-plain'
-     });
-     response.write('O pai ta On ');
-     response.end();
-       
- }).listen(3000);*/
+app.listen(port)
