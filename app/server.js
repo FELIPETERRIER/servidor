@@ -9,4 +9,6 @@ app.get('/aluno/:id', alunosController.getAluno)
 
 app.post('/aluno/', alunosController.postAluno)
 
+app.delete('/aluno/:', alunosController.deleteAluno)
+
 app.listen(port)

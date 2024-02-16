@@ -19,3 +19,14 @@ exports.postAluno = (req, res) => {
         }
     );
 }
+
+exports.deleteAluno = (req, res) => {
+    res.status(201).json(
+        {
+            dados: {
+                nome: req.body.usuario_nome
+            },
+            status: "Aluno excluído!"
+        }
+    );
+}
