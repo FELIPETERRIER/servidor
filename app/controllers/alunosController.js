@@ -13,18 +13,19 @@ exports.postAluno = (req, res) => {
     res.status(201).json(
         {
             dados: {
-                nome: req.body.usuario_nome
+                nome: req.body
             },
             status: "Aluno criado"
         }
     );
 }
-
 exports.deleteAluno = (req, res) => {
-    res.status(201).json(
+    console.log("passei aqui")
+    console.log(req.params.id)
+    res.status(200).json(
         {
             dados: {
-                nome: req.body.usuario_nome
+                nome: req.params
             },
             status: "Aluno excluído!"
         }
